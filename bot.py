@@ -239,7 +239,7 @@ async def score_management(call: CallbackQuery, state: FSMContext):
     await state.update_data(class_management=int(call.data))
     await call.message.answer(
         "📲 استاد از چه راهی با دانشجویان ارتباط داشت؟",
-        reply_markup=kb(["تلگرام", "واتساپ", "ایتا", "گروه درسی", "راه ارتباطی مشخصی ندارد"])
+        reply_markup=kb(["تلگرام", "نماینده کلاس", "ایتا", "گروه درسی", "راه ارتباطی مشخصی ندارد"])
     )
     await state.set_state(Review.contact)
     await call.answer()
