@@ -219,7 +219,7 @@ async def score_management(call: CallbackQuery, state: FSMContext):
     await state.update_data(class_management=int(call.data))
     await call.message.answer(
         "📲 استاد از چه راهی با دانشجویان ارتباط داشت؟",
-        reply_markup=kb(["تلگرام", "واتساپ", "ایتا", "گروه درسی", "راه ارتباطی مشخصی ندارد"])
+        reply_markup=kb(["تلگرام", "نماینده کلاس", "ایتا", "گروه درسی", "راه ارتباطی مشخصی ندارد"])
     )
     await state.set_state(Review.contact)
     await call.answer()
@@ -229,7 +229,7 @@ async def score_management(call: CallbackQuery, state: FSMContext):
 async def get_contact(call: CallbackQuery, state: FSMContext):
     await state.update_data(contact_methods=call.data)
     await call.message.answer(
-        "✍️ تجربه‌ات از این استاد رو بنویس (نحوه تدریس، رفتار، امتحان و هر نکته‌ی مفید دیگه).\n"
+        "✍️ تجاربی که بچه های ترم بعد باید بهش توجه کنند چیه؟(نحوه پاسخ دهی به سوالات استاد، نحوه خواندن جزوات استاد ،تو طول ترم بخونیم یا نه ، و هر نکته‌ی مفید دیگه).\n"
         "⚠️ لطفاً از توهین و اطلاعات شخصی خودداری کن."
     )
     await state.set_state(Review.comment)
