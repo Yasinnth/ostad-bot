@@ -100,7 +100,7 @@ async def skip_specialty(call: CallbackQuery, state: FSMContext):
     await state.update_data(specialty=None)
     await call.message.answer(
         "📚 نام دانشکده‌ای که در آن هستید چیست؟",
-        reply_markup=kb(["پزشکی", "داروسازی", "پرستاری", "مامایی", "بهداشت و علوم آزمایشگاهی", "➕ سایر"])
+        reply_markup=kb(["پزشکی", "داروسازی", "پرستاری", "مامایی", "بهداشت", "علوم آزمایشگاهی", "➕ سایر"])
     )
     await state.set_state(Review.faculty)
     await call.answer()
