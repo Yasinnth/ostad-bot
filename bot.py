@@ -90,7 +90,7 @@ async def get_specialty_text(message: Message, state: FSMContext):
     await state.update_data(specialty=message.text)
     await message.answer(
         "📚 نام دانشکده‌ای که در آن هستید چیست؟",
-        reply_markup=kb(["پزشکی", "داروسازی", "پرستاری", "مامایی", "بهداشت و علوم آزمایشگاهی", "➕ سایر"])
+        reply_markup=kb(["پزشکی", "داروسازی", "پرستاری", "مامایی", "بهداشت", "علوم آزمایشگاهی", "➕ سایر"])
     )
     await state.set_state(Review.faculty)
 
