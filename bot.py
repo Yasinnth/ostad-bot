@@ -130,17 +130,11 @@ async def get_course(message: Message, state: FSMContext):
     await message.answer(
         "🗓️ در چه ترمی با این استاد کلاس داشتی؟",
         reply_markup=kb(["ترم ۱", "ترم ۲", "ترم ۳", "ترم ۴", "ترم ۵", "ترم ۶",
-                          "ترم ۷", "ترم ۸", "ترم ۹", "ترم ۱۰", "ترم ۱۱", "ترم ۱۲", "➕ سایر"])
+            "ترم ۷", "ترم ۸", "ترم ۹", "ترم ۱۰", "ترم ۱۱", "ترم ۱۲",])
     )
     await state.set_state(Review.semester)
 
 
-@router.callback_query(Review.semester)
-async def get_semester(call: CallbackQuery, state: FSMContext):
-    if call.data == "➕ سایر":
-        await call.message.answer("✏️ ترم رو بنویس:")
-        await call.answer()
-        return
     await state.update_data(semester=call.data)
     await call.message.answer(
         "📚 استاد برای تدریس از چه منابعی استفاده می‌کرد؟",
@@ -238,7 +232,7 @@ async def score_management(call: CallbackQuery, state: FSMContext):
     await state.update_data(class_management=int(call.data))
     await call.message.answer(
         "📲 استاد از چه راهی با دانشجویان ارتباط داشت؟",
-        reply_markup=kb(["تلگرام", "واتساپ", "ایتا", "گروه درسی", "راه ارتباطی مشخصی ندارد"])
+        reply_markup=kb(["تلگرام","نماینده کلاس", "واتساپ", "ایتا", "گروه درسی", "راه ارتباطی مشخصی ندارد"])
     )
     await state.set_state(Review.contact)
     await call.answer()
