@@ -327,7 +327,7 @@ async def confirm(call: CallbackQuery, state: FSMContext):
             "📌 <u>نکته مهم:</u> وقتی نظرات کافی برای این استاد جمع بشه، همه‌شون رو "
             "<b>یکجا جمع‌بندی می‌کنیم</b> و به‌صورت یک پست کامل توی کانال منتشر می‌کنیم "
             "تا بقیه‌ی دانشجوها هم از تجربه‌ی شما استفاده کنن 📊🙌\n\n"
-            f"📢 برای دیدن نتایج و آمار استادها، عضو کانال شو:\n"
+            f"📢 (@teacherZBMU)برای دیدن نتایج و آمار استادها، عضو کانال شو:\n"
             f'👉 <a href="{CHANNEL_LINK}">{CHANNEL_HANDLE}</a>'
         )
         await call.message.answer(final_text, reply_markup=restart_kb(), parse_mode="HTML", disable_web_page_preview=True)
